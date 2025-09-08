@@ -64,9 +64,9 @@ body > section {
 }
 
 .logo{
-    height: 40px;
-    width: 40px;
-    object-fit: contain;
+    height: 70px;
+    width: 70px;
+    object-fit: fill;
 }
 
 .navbar{
