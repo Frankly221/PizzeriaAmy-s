@@ -79,10 +79,10 @@ body > section {
     width: 70px;
     object-fit: fill;
 }
+
 .logo-text p,h1{
     color: white;
 }
-
 .navbar{
     display: flex;
     flex-direction: row;
@@ -110,8 +110,8 @@ body > section {
   position: relative;
   margin-top: calc(var(--height-header) - 24px);
   height: 80dvh;
-  min-height: 400px;
-  max-height: 600px;
+  min-height: 200px;
+  max-height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -122,7 +122,7 @@ body > section {
   text-align: center;
 }
 
-#hero-video {
+.hero-img {
   position: absolute;
   top: 0;
   left: 0;
@@ -170,7 +170,7 @@ body > section {
 
 #why h2 {
   font-size: 36px;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
   color: rgb(209, 171, 107);
 }
 
@@ -181,170 +181,118 @@ body > section {
   margin: 0 auto;
 }
 
-#ofices {
-  padding: 48px;
+/* Estilos para el contenedor de pizzas */
+.pizzas-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 32px;
 }
 
-#ofices h2 {
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-.ofices__content {
+/* Estilos para el card de pizza */
+.pizza-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 320px;
   width: 100%;
-  max-width: var(--max-width-global);
-  margin-inline: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pizza-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.pizza-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
   position: relative;
 }
 
-#ofices .btn-slider {
-  position: absolute;
-  z-index: 10;
-  top: 100px;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  background-color: var(--primary-color);
-  border: none;
-  border-radius: 50%;
-  color: #fff;
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
+.pizza-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-#ofices .btn-slider * {
+.pizza-card:hover .pizza-img {
+  transform: scale(1.05);
+}
+
+.pizza-content {
+  padding: 20px;
+}
+
+.pizza-name {
+  font-size: 24px;
   font-weight: 700;
-  font-size: 32px;
+  color: var(--text-color);
+  margin-bottom: 16px;
+  text-align: center;
 }
 
-#ofices .btn-slider:hover {
-  background-color: #fff;
-  box-shadow: 0 0 0 1px var(--primary-color);
+.pizza-ingredients h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.ingredients-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.ingredients-list li {
+  padding: 4px 0;
+  font-size: 14px;
+  color: var(--text-color);
+  position: relative;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.ingredients-list li::before {
+  content: "🍕";
+  position: absolute;
+  left: 0;
+  font-size: 12px;
+}
+
+.pizza-price {
+  text-align: center;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 700;
   color: var(--primary-color);
 }
 
-#ofices .btn-slider:active {
-  scale: 0.95;
+/* Responsive design para pizzas */
+@media (max-width: 768px) {
+  .pizzas-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .pizza-card {
+    max-width: 100%;
+    width: 90%;
+  }
+  
+  .pizza-name {
+    font-size: 20px;
+  }
 }
 
-#ofices .btn-slider.prev {
-  left: 0px;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
 
-#ofices .btn-slider.next {
-  right: 0px;
-  -webkit-transform: translateX(50%);
-  transform: translateX(50%);
-}
-
-.ofices__card {
-  display: grid;
-  grid-template-rows: 200px auto auto;
-  gap: 14px;
-}
-
-.ofices__card--img {
-  background-image: var(--ofice-card-img);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-}
-
-.ofices__card .title--card {
-  font-size: 20px;
-}
-
-.ofices__card button {
-  background-color: transparent;
-  outline: none;
-  border-radius: 4px;
-  border: 1px solid var(--btn-secondary-color);
-  color: var(--btn-secondary-color);
-  padding: 8px 12px;
-  font-weight: 600;
-  transition: all .3s ease;
-}
-
-.ofices__card button:hover {
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-}
-
-.ofices__card button.btn-cotizar {
-  background-color: var(--btn-secondary-color);
-  color: #fff;
-}
-
-.ofices__card button.btn-cotizar:hover {
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-}
-
-#where {
-  background-color: var(--primary-color);
-  color: #fff;
-  padding: 48px 60px;
-}
-
-#where h2 {
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-#where main {
-  max-width: var(--max-width-global);
-  height: 350px;
-  margin-inline: auto;
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 24px;
-}
-
-#where main article ul {
-  margin-bottom: 12px;
-}
-
-#where main .map {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 32vw;
-  max-height: 350px;
-  max-width: 600px;
-}
-
-.finalsalas{
-  text-align: center;
-  margin-right: auto;
-  margin-top: 30px;
-}
-
-.btn-ver-todas{
-
-  background-color: var(--btn-secondary-color);
-  color: #fff;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 4px;
-  font-weight: 600;
-  transition: all .3s ease;
-}
-
-.btn-ver-todas:hover{
-  background-color: var(--primary-color);
-  color: white;
-}
-
-.title {
-  color: rgb(209, 171, 107);
-  font-size: 2.5rem;
-  margin-bottom: 26px;
-  padding-right: 40px;
-
-}
