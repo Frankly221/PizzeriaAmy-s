@@ -106,6 +106,98 @@ body > section {
     vertical-align: middle;
 }
 
+/* Hamburguesa para móviles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .header {
+        padding: 0 15px;
+    }
+    
+    .navbar {
+        position: fixed;
+        top: var(--height-header);
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - var(--height-header));
+        background-color: var(--primary-color);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: 0;
+        transition: left 0.3s ease;
+        padding-top: 50px;
+        gap: 30px;
+    }
+    
+    .navbar.active {
+        left: 0;
+    }
+    
+    .navbar a {
+        font-size: 20px;
+        padding: 10px 20px;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .contacto a {
+        display: none; /* Ocultar texto en móviles */
+    }
+    
+    .whatsapp-icon {
+        height: 35px;
+        width: 35px;
+    }
+    
+    .logo-container {
+        gap: 5px;
+    }
+    
+    .logo {
+        height: 50px;
+        width: 50px;
+    }
+    
+    .logo-text h1 {
+        font-size: 18px;
+    }
+    
+    .logo-text p {
+        font-size: 12px;
+    }
+}
+
 #hero {
   position: relative;
   margin-top: calc(var(--height-header) - 24px);
