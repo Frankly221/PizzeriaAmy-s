@@ -230,6 +230,40 @@ body > section {
     object-fit: cover;
 }
 
+#where {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 48px 60px;
+}
+
+#where h2 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+#where main {
+  max-width: var(--max-width-global);
+  height: auto;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 24px;
+}
+
+#where main article ul {
+  margin-bottom: 12px;
+}
+
+#where main .map {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 32vw;
+  height: 400px;
+  max-height: 450px;
+  max-width: 600px;
+}
+
 /* Responsive design para pizzas */
 @media (max-width: 768px) {
   .pizzas-container {

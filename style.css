@@ -405,9 +405,9 @@ body > section {
 #where main .map {
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   width: 32vw;
-  max-height: 350px;
+  max-height: 450px;
   max-width: 600px;
 }
 
